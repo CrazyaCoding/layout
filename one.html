@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>一列垂直居中-9种思路</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			width: 700px;
+			height: 300px;
+			margin: 0 auto 50px; 
+			border:2px solid green;
+		}
+		p.tit{
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		
+		.box p{
+			background: yellow;
+		}
+
+		.box1{
+			line-height: 300px;
+		}
+
+		.box2{
+			position: relative;
+		}
+		.box2 p{
+			position: absolute;
+			top: 50%;
+			height: 100px;
+			margin-top: -50px;
+		}
+
+		.box3{
+			position: relative;
+		}
+		.box3 p{
+			position: absolute;
+			top:50%;
+			transform: translateY(50%);
+		}
+
+		.box4{
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.box5{
+			position: relative;
+			
+		}
+		.box5 p{
+			position: fixed;
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
+			margin:auto;
+			width: 100px;
+			height: 100px;
+		}
+
+		.box6{
+
+		}
+		.box6:before{
+			content: "";
+			height: 100%;
+			vertical-align: middle;
+			visibility: hidden;
+			display: inline-block;
+		}
+		.box6 p{
+			display: inline-block;
+		}
+
+		.box7{
+			
+		}
+		.box7 span{
+			height: 100%;
+			width: 1px;
+			vertical-align: middle;
+			display: inline-block;
+		}
+		.box7 p{
+			display: inline-block;
+		}
+
+		.box8{
+			display: -webkit-box;
+			-webkit-box-align:center;
+		}
+		
+		.box9{
+			position: relative;
+		}
+		.box9 p{
+			position: absolute;
+			height: 100px;
+			top: -webkit-calc(50% - 100px / 2);
+		}
+	</style>
+</head>
+<body>
+	<p class="tit">line-height</p>
+	<div class="box box1">喵喵哒~</div>
+
+	<p class="tit">absolute+margin</p>
+	<div class="box box2">
+		<p>
+			汪汪汪~		
+		</p>
+	</div>
+
+	<p class="tit">absolute + tansform(定位元素基准为父元素，transform偏移参考点为自身)</p>
+	<div class="box box3">
+		<p>biabiabia~</p>
+	</div>
+
+	<p class="tit">table-cell</p>
+	<div class="box box4">
+		<p>强强强强</p>
+	</div>
+
+	<p class="tit">fixed margin</p>
+	<div class="box box5">
+		<p>劳资来啦！</p>
+	</div>
+
+	<p class="tit">before+margin</p>
+	<div class="box box6">
+		<p>bibibibibibibo~</p>
+	</div>
+
+	<p class="tit">vertical-align</p>
+	<div class="box box7">
+	<span></span>
+		<p>哈哈哈哈哈哈</p>
+	</div>
+
+	<p class="tit">-webkit-box</p>
+	<div class="box box8">
+		<p>balala;a;a;;a;a</p>
+	</div>
+
+	<p class="tit">absolute + calc</p>
+	<div class="box box9">
+		<p>biubiubiubiubiu---></p>
+	</div>
+
+</body>
+</html>
